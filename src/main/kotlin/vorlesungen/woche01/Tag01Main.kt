@@ -36,4 +36,10 @@ fun main() {
     // pirntln("Ups tippfehler...")
 
 
+    // Bonus: String in Konsole einlesen, im Programm benutzen
+    println("Bitte gib deinen Namen ein....")
+    val name = readln() // readln: lese etwas aus der Konsole ein
+    println("Hi, $name!")
+
+
 }
