@@ -4,9 +4,11 @@ fun main() {
     // Variable anlegen:
     // Syntax: Schluesselwort var - variablenname - : - Datenyp - = - inhalt
     // hallo
+    // noch ein hallo
 
 
     // Variable aktualisieren
+
 
 
     // firstName = "Hermine"
