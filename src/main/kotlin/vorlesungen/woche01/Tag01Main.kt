@@ -16,7 +16,7 @@ fun main() {
     kommentar
      */
 
-    println("Wie geht's")
+    println(9*9)
 
     // unsere 1. Zeile Code
     // println: druckt Inhalt der Klammern mit einem Zeilenumbruch
