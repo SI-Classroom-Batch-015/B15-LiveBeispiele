@@ -34,7 +34,6 @@ fun main() {
     // birthDate = "02.02.2002" // <- Compilefehler, birthDate ist eine Konstante, darf nicht verändert werden
 
 
-
     // readln() benutzen, in Variable speichern
     println("Bitte gib dein Lieblingsessen ein....")
     var favoriteFoodInput: String = readln() // readln gibt das zurück, was in die Konsole reingeschrieben wurde. heißt also, die eingabe wird in der variable input gespeichert
