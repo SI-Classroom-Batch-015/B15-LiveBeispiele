@@ -34,6 +34,20 @@ fun main() {
     println("Länge der Vornamenliste: $sizeOfNameList")
     println("Länge der Nachnamenliste: ${lastNameList.size}")
 
+    // mit size und index arbeiten:
+    // wir wollen das letzte element rausschälen und dabei NICHT den index hardcoden (also einfach manuell abzählen und die richtige Zahl eintragen)
+    // dazu machen wir uns .size zu nutze: wir wissen, in .size steht immer die tatsächliche länge
+    // wir wissen auch: der Index ist immer genau 1 kleiner als die länge
+    // bedeutet: wir koönnen, um immer an den letzten Index zu gelangen, .size-1 nutzen:
+    var lastFirstName: String = firstNameList[firstNameList.size-1]
+
+    // mit hilfsvariable:
+    var sizeLastNameList: Int = lastNameList.size
+    var lastLastName: String = lastNameList[sizeLastNameList-1]
+
+
+
+
     // isEmpty: gibt true zurück, wenn die Liste leer ist.
     println("FirstNameList leer? -> ${firstNameList.isEmpty()}") // false
     println("Leere Liste leer? -> ${emptyList.isEmpty()}") // true
