@@ -27,4 +27,8 @@ fun main() {
 
     // max
     var maxNr: Int = max(x,y)
+
+    // Modulo: der Rest, der übrig bleibt, wenn man 2 zahlen teilt. zB:
+    var mod: Double = 10.0%9.0 // Rest: 1.0
+    var mod2: Int = 5%3 // Rest: 2
 }
