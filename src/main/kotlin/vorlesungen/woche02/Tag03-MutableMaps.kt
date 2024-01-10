@@ -79,34 +79,53 @@ fun main() {
     var zahnpastaPreis: Double? = mutableArticles["Zahnpasta"]
     var shampooPreis: Double? = mutableArticles.get("Shampoo")
 
+    val taylorSongList: MutableList<String> = mutableListOf("Shake it Off", "Blank Space", "Lavender Haze")
 
     // Komplexere Map, die je einen Key auf eine Liste an Values mappt:
+    var music: MutableMap<String,MutableList<String>> = mutableMapOf(
+        "Lorde" to mutableListOf("Ribs", "Royals", "Solar Power"),
+        "Lizzo" to mutableListOf("Juice","Truth Hurts", "Rumors"),
+        "Taylor Swift" to taylorSongList
+    )
 
-
-
-
+    println(music)
 
 
     // Operationen an Listen in Maps
-    // Element hinzufügen: Junge an Die Arzte hinzufuegen
+    // Key Value Paar hinzufügen:
+    music.put("Metallica", mutableListOf("Nothing Else Matters", "One", "Hit The Lights"))
+    println(music)
 
-    // Element an bestimmten index hinzufuegen
+    music["Michael Jackson"] = mutableListOf("Thriller", "Billie Jean", "Smooth Criminal", "Beat It")
+    println(music)
 
+    music["Taylor Swift"] = mutableListOf("Anti-Hero","Lavender Haze", "Clean")
+    println(music)
 
+    // Element bei Taylor Swift and Ende hinzufuegen
+    // 1. Schritt: Liste rausschälen, 2. Schritt: darauf .add() anwenden
+    var addSongWorked: Boolean? = music["Taylor Swift"]!!.add("Maroon")
+
+    // Element bei Lorde an Index 0 hinzufuegen
+    music["Lorde"]!!.add(0,"The Path")
+
+    music["Helene Fischer"]?.add("Atemlos") // ? bedeutet: gib null aus und stürz nicht ab
+
+    println(music)
 
     // Element entfernen
-
-    // neuen Key und Value in die Map einfügen
-    // gleiches Prinzip wie hier:  mutableArticles["Orange"] = 0.99
+    music["Metallica"]!!.remove("One") // !! bedeutet: keine sorge, ist nicht null, stürz ab wenn doch
 
     // Key und dessen Value entfernen
-
+    var removedList: MutableList<String>? = music.remove("Taylor Swift")
 
     // Existiert ein bestimmter Key?
     // analog zu: articles.containsKey("Milch")
+    var taylorExists: Boolean = music.contains("Taylor Swift")
 
 
     // existiert ein bestimmes Element in den Values eines Keys?
-    // existiert der song Blank Space in der Taylor Entry?
+    // existiert der song Billie Jean bei Michael Jackson?
+    var billieExists: Boolean? = music["Michael Jackson"]?.contains("Billie Jean") // true
 
 }
