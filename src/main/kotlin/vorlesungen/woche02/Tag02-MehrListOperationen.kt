@@ -53,6 +53,7 @@ fun main() {
 
     println("Min: $min, Max: $max")
 
+
     // indexOf() - erstes Vorkommen eines Elements in der Liste
     // Vorbereitung: Ein Element doppelt in die Liste fügen
     mutableShoppingList.add("Kuchen")
