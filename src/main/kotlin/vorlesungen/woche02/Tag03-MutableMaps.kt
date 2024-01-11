@@ -17,6 +17,7 @@ fun main() {
     // put(key, value) fügt ein neues Key Value Paar hinzu (oder überschreibt den Value eines Existierenden Keys, wenn der übergebene Key damit übereinstimmt)
     val oldBananaPrice: Double? = mutableArticles.put("Banane", 1.99)
     println("Banane kostete vorher: $oldBananaPrice")
+    // ODER: über []
     println("Banane kostet jetzt: ${mutableArticles["Banane"]}")
 
     val oldCherryPrice: Double? = mutableArticles.put("Kirsche",2.49)
@@ -77,6 +78,7 @@ fun main() {
 
     // Nullability bei Maps: mit Datentyp angabe, sonst automatisch
     var zahnpastaPreis: Double? = mutableArticles["Zahnpasta"]
+    // ODER:
     var shampooPreis: Double? = mutableArticles.get("Shampoo")
 
     val taylorSongList: MutableList<String> = mutableListOf("Shake it Off", "Blank Space", "Lavender Haze")
@@ -95,10 +97,11 @@ fun main() {
     // Key Value Paar hinzufügen:
     music.put("Metallica", mutableListOf("Nothing Else Matters", "One", "Hit The Lights"))
     println(music)
-
+    // ODER:
     music["Michael Jackson"] = mutableListOf("Thriller", "Billie Jean", "Smooth Criminal", "Beat It")
     println(music)
 
+    // existierenden Wert überschreiben
     music["Taylor Swift"] = mutableListOf("Anti-Hero","Lavender Haze", "Clean")
     println(music)
 
