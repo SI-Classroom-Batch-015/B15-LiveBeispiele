@@ -5,11 +5,11 @@ fun main(){
 // Set: unsortierte Kollektion einzigartiger Elemente. D.h. Doppelungen desselben Werts werden nicht geprinted oder gezählt
 
     var animalList: MutableList<String> = mutableListOf("Tiger","Igel","Rabe","Bär")
-    println(animalList)
+    println("AnimalList: $animalList")
 
     // set anlegen
     var animalSet: Set<String> = setOf("Tiger","Igel","Rabe","Bär")
-    println(animalSet)
+    println("AnimalSet: $animalSet")
 
 
     // mutable machen
@@ -26,7 +26,7 @@ fun main(){
     animalList.add("Tiger")
     animalList.add("Löwe")
 
-    println(animalList)
+    println("AnimalList, nachdem wir einige doppelte Tiere geaddet haben: $animalList)")
 
     // nur nicht bereits vorhandene Elemente werden aufgenommen:
     mutableSet.add("Gorilla")
@@ -37,18 +37,18 @@ fun main(){
     mutableSet.add("Giraffe")
     mutableSet.add("Tiger")
     mutableSet.add("Löwe")
-    println(mutableSet)
+    println("mutableSet, nachdem wir doppelte Tiere adden wollten: $mutableSet \nWir sehen also: Im Set kommen keine Doppelungen vor")
 
 
 
     // set zur mutable liste konvertieren
     var mutableAnimals: MutableList<String> = mutableSet.toMutableList()
-    println(mutableAnimals)
+    println("mutableSet in eine Mutable List umgewandelt: $mutableAnimals, am Inhalt ändert sich nichts, Doppelungen bleiben draußen.")
 
 
     // liste mit duplikaten zu set konvertieren: animalList zum Set machen
     var listToSet: MutableSet<String> = animalList.toMutableSet()
-    println(listToSet)
+    println("Liste mit Duplikaten zum Set umwandeln: die Doppelungen verschwinden. $listToSet")
 
 
 
