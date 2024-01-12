@@ -1,0 +1,197 @@
+package vorlesungen.Woche02
+
+import kotlin.random.Random
+
+fun main() {
+
+    // WIEDERHOLUNG
+    // Listen
+
+    // liste an artists anlegen
+    var artistList: List<String> = listOf("Taylor Swift", "Eminem", "Metallica", "Tupac", "Lizzo", "Ed Sheeran", "Grimes", "Charlie XCX")
+
+    // mutable kopie erstellen, auf die man schreibend zugreifen kann
+    val mutableArtistList: MutableList<String> = artistList.toMutableList()
+
+
+    // ein paar operationen
+    // (Element einlesen und in die Liste speichern)
+    println("Bitte gib deinen Lieblings Artist ein:")
+
+    // 1. Eingabe in Variable speichern
+    val input: String = readln()
+
+    // 2. Element ans Ende schreiben
+    mutableArtistList.add(input)
+
+    // weitere Eingabe, vorletztes Element durch Eingabe ersetzen
+    //mutableArtistList[mutableArtistList.size-2] = readln()
+
+    // 3. welches ist das letzte Element? In einer Variable speichern
+    val lastElement: String = mutableArtistList[mutableArtistList.size-1]
+    // ODER
+    var lastElement2: String = mutableArtistList.last()
+
+    // FRAGE: Wie kann ich gezielt Eminem entfernen?
+        // 1. simpelste Variante
+        mutableArtistList.remove("Taylor Swift")
+
+        // 2. mehrschrittige Variante: imagine... remove() existiert nicht. nur removeAt() existiert
+        val indexEminem = mutableArtistList.indexOf("Eminem")
+        mutableArtistList.removeAt(indexEminem)
+
+
+    // 4.1 erstes Element rausschälen
+    val first: String = mutableArtistList[0]
+    // ODER
+    val first2: String = mutableArtistList.first()
+    // 4.1.2 entfernen
+    mutableArtistList.remove(first)
+    // ODER: ohne Variable
+    mutableArtistList.remove(mutableArtistList.first())
+
+
+    // 4.2 erstes Element in Variable speichern und gleichzeitig aus Liste entfernen
+    val firstElement: String = mutableArtistList.removeFirst()
+
+
+    // 5. liste alphabetisch sortieren, ausgeben
+    println(mutableArtistList.sort())
+
+
+    // 6. random listenElement speichern
+    var randomListElement: String = mutableArtistList.random()
+
+
+        // btw: zufällige Zahl speichern, mit Boolean analog
+        var randomNumber = Random.nextInt()
+
+
+    // NULL
+    val firstName: String? = null
+    val firstNameLength: Int? = firstName?.length
+    println("Safe Call mit ?: es kommt null raus, falls in firstName null stehen sollte: $firstNameLength")
+    //println("Non Null Asserted Call mit !!: es kommt eine NPE raus, falls in firstName null stehen sollte, das Programm stürzt ab: ${firstName!!.length}")
+
+
+
+
+    // Maps
+
+    val bestSongMap: Map<String,String> = mapOf(
+        "Lorde" to "Ribs",
+        "Die Ärzte" to "Ein Song namens Schunder",
+        "Lizzo" to "The Sign",
+        "Falling in Reverse" to "Voices in My Head",
+        "Wu Tang Clan" to "Cream",
+        "Bones" to "Human",
+        "Jamiroquai" to "Cosmic Girl"
+    )
+
+    // Kopie der bestSong Map, die veränderbar ist, erstellen
+    var mutableBestSong: MutableMap<String,String> = bestSongMap.toMutableMap()
+
+    // ein paar operationen:
+    // Was sind alle Values?
+    val values = mutableBestSong.values
+    // Einzelne Values: Value von Die Ärzte
+    // getValue wirft NoSuchElementException, wenn der key nicht existiert.
+    val aerzteSong: String = mutableBestSong.getValue("Die Ärzte")
+    // ODER
+    // [] Schreibweise kann null zurückgeben = Variable, in die gespeichert wird, muss nullable sein
+    val lordeSong: String? = mutableBestSong["Lorde"]
+    // ODER mit !! forcieren, dass wir bei null abstürzen
+    val wuTangSong: String = mutableBestSong["Wu Tang Clan"]!!
+    // ODER get: gibt null zurück, wenn key nicht existiert
+    val jamiroSong: String? = mutableBestSong.get("Jamiroquai")
+
+    // einen artist + song hinzufügen:
+    mutableBestSong["Girl in Red"] = "Serotonin"
+    // ODER
+    mutableBestSong.put("Nena","99 Luftballons")
+
+
+    // eintrag entfernen, egal welcher value drin steht
+    val removedElement: String? = mutableBestSong.remove("Bones")
+    println(removedElement)
+
+
+    // eintrag nur entfernen, wenn er enthält, was wir im value spezifizieren:
+    val removeLizzoSuccess: Boolean = mutableBestSong.remove("Lizzo","Good As Hell")
+    println(removeLizzoSuccess)
+
+
+
+    println("----Neuer Stoff----")
+    // Sonderfall: Konvertierung von Maps zu Listen
+    val pairList: List<Pair<String,Int>> = listOf(
+        Pair("Eins",1),
+        Pair("zwei", 2)
+    )
+    val pairListToMap: Map<String,Int> = pairList.toMap()
+    val pairListMutable = pairList.toMutableList()
+
+    var myMap: Map<String, String> = mapOf(
+        "DE" to "+49",
+        "AT" to "+43",
+        "PT" to "+351"
+    )
+    val myMapToList:  List<Pair<String, String>> = myMap.toList()
+    println(myMapToList) // [(DE, +49), (AT, +43), (PT, +351)]
+
+    // Die resultierende Liste enthält anschließend Pairs, also immer 2 Werte als ein Listenelement
+    // auf den ersten oder zweiten Wert eines Pairs können wir dann mit first und second zugreifen
+
+
+
+
+
+
+    // val listToMap = list.toMap() // nicht moeglich, kein Pair in der Liste enthalten. geht nur mit Pairs!
+
+
+    // Eine Liste an Pairs kann auch wieder zu einer Map konvertiert werden
+
+
+
+
+
+    // Eine Map aus zwei Listen machen → myNamesList ist der Key und myAgeList der Value
+
+
+
+
+
+
+
+
+
+    // Verschachtelte Map:
+    var discographies: MutableMap<String, List<String>> = mutableMapOf(
+        "Taylor Swift" to listOf("1989", "Speak Now", "Folklore", "Midnights"),
+        "Lorde" to listOf("Pure Heroine", "Melodrama", "Solar Power"),
+        "Biggie Smalls" to listOf("Ready to Die", "Life After Death", "Album3"),
+        "Nena" to listOf("99 Luftballons", "Irgendwie, irgendwo, irgendwann", "Nur geträumt")
+    )
+
+    // auf eine liste in der map zugreifen und einen wert entfernen/verändern: wir wollen "Speak Now" löschen
+    // 1. die liste anhand des keys rausholen, zwischenspeichern
+
+    // 2. das element aus der liste entfernen
+
+    // 3. die veränderte Liste in den passenden Value schreiben
+
+
+    // SETS
+
+    // bereits erstellte Liste zum Set machen
+
+    // auf einen wert per index zugreifen: nur mit .elementAt() möglich
+
+
+    // doppelten wert hinzufügen -> Was passiert?
+
+
+
+
+}

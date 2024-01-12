@@ -98,5 +98,4 @@ fun main(){
     listToSet.remove("Tiger")
     listToSet.clear() // leer das gesamte Set aus, ist jetzt leer
 
-
 }
