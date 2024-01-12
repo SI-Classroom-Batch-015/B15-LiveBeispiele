@@ -121,6 +121,23 @@ fun main() {
     println(removeLizzoSuccess)
 
 
+//    // kleine Vorschau: Repeat Schleife
+    var p1: MutableList<String> = mutableListOf()
+    var p2: MutableList<String> = mutableListOf()
+    // p1 und p2 sollen abwechselnd 3 Karten ziehen
+
+    repeat(100){// it wird automatisch mitgeliefert, zählt bei jeder Iteration hoch
+        // alles, was hier im Block {} steht, wird 3x wiederholt
+        p1.add("${it+1}. Karte für p1")
+        p2.add("${it+1}. Karte für p2")
+    }
+    println(p1)
+    println(p2)
+
+
+
+
+
 
     println("----Neuer Stoff----")
     // Sonderfall: Konvertierung von Maps zu Listen
