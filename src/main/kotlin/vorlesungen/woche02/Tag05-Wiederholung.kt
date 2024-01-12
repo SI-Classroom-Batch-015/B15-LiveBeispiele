@@ -141,30 +141,32 @@ fun main() {
 
     // Die resultierende Liste enthält anschließend Pairs, also immer 2 Werte als ein Listenelement
     // auf den ersten oder zweiten Wert eines Pairs können wir dann mit first und second zugreifen
+    println(myMapToList[0]) // (DE, +49)
+    println(myMapToList[0].first) // DE
+    println(myMapToList[0].second) // +49
 
-
-
-
-
-
+    val list = listOf(1,2,3,4,5,6) //[1,2,3,4,5,6]
+    println(list[0]) // 1
     // val listToMap = list.toMap() // nicht moeglich, kein Pair in der Liste enthalten. geht nur mit Pairs!
 
 
     // Eine Liste an Pairs kann auch wieder zu einer Map konvertiert werden
+    val mapFromPairList: Map<String,String> = myMapToList.toMap()
+    println(mapFromPairList)
 
 
+    // Zugriff auf Indices von List-Items
+    val namesList: List<String> = listOf("Lukas", "Leon", "Lennart")
 
-
+    val ageList: List<Int?> = listOf(26,22,null)
 
     // Eine Map aus zwei Listen machen → myNamesList ist der Key und myAgeList der Value
+    val nameMap: Map<String,Int?> = namesList.zip(ageList).toMap()
+    val mutableNameMap = nameMap.toMutableMap()
 
-
-
-
-
-
-
-
+    println(nameMap)
+    mutableNameMap["Lennart"] = 24
+    println(mutableNameMap)
 
     // Verschachtelte Map:
     var discographies: MutableMap<String, List<String>> = mutableMapOf(
@@ -176,22 +178,30 @@ fun main() {
 
     // auf eine liste in der map zugreifen und einen wert entfernen/verändern: wir wollen "Speak Now" löschen
     // 1. die liste anhand des keys rausholen, zwischenspeichern
+    var taylorSongs: MutableList<String>? = discographies["Taylor Swift"]?.toMutableList()
 
     // 2. das element aus der liste entfernen
+    taylorSongs?.remove("Speak Now")
 
-    // 3. die veränderte Liste in den passenden Value schreiben
+    // 3. die veränderte Liste in den passenden Value schreiben. Warum brauchen wir .toList?
+    discographies["Taylor Swift"] = taylorSongs!!.toList()
 
 
     // SETS
 
     // bereits erstellte Liste zum Set machen
+    println(artistList)
+    var mutableArtistSet: MutableSet<String> = artistList.toMutableSet()
+    println(mutableArtistSet)
 
     // auf einen wert per index zugreifen: nur mit .elementAt() möglich
-
+    var secondArtist = mutableArtistSet.elementAt(1)
 
     // doppelten wert hinzufügen -> Was passiert?
-
-
+    mutableArtistSet.add("TuPac")
+    println(mutableArtistSet)
+    mutableArtistSet.add("Biggie Smalls")
+    println(mutableArtistSet)
 
 
 }
