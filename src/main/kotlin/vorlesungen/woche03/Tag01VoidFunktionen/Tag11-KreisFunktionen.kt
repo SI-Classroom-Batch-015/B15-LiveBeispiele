@@ -1,4 +1,4 @@
-package VORLESUNG.Woche03.Tag11VoidFunktionen
+package vorlesungen.woche03.Tag01VoidFunktionen
 
 import kotlin.math.PI
 import kotlin.math.pow
