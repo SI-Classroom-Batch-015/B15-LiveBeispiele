@@ -2,8 +2,8 @@ package VORLESUNG.Woche03.Tag13Parameter
 
 fun main(){
     // konkrete Parameter beim Aufruf nennen sich Argumente
-    makePancakes(2,250,190,200)
-    makePancakes(4,500,300,400)
+    //makePancakes(2,250,190,200)
+   // makePancakes(4,500,300,400)
     makeBetterPancakes(2)
     makeBetterPancakes(10)
 
@@ -25,7 +25,7 @@ fun makeBetterPancakes(anzahlPortionen: Int){
     val wasser: Int = 150*anzahlPortionen
     val milch: Int = 190*anzahlPortionen
 
-    println("Schritte:")
+    println("Schritte: \n")
     println("$eier Eier und $mehl g Mehl mischen...")
     Thread.sleep(2000)
     println("$milch ml Milch und $wasser ml Wasser dazu geben...")
