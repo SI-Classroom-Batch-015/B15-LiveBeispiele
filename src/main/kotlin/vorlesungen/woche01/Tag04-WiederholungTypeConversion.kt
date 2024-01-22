@@ -28,3 +28,4 @@ fun main() {
     var eingegebeneZahl: String = readln()
     println("Die eingegebene Zahl ist: $eingegebeneZahl")
 }
+
