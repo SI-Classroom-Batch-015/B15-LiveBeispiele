@@ -1,4 +1,5 @@
 // TODO: Aufgabe 3a: Preisabfrage
+/*
 fun preisAbfrage(film: String): Double{
     // Simpelste Lösung:
     //    return filmToPrice[film] ?: -1.0
@@ -112,3 +113,6 @@ fun filterByGenre(genre: String): List<String>{
         film -> genreAbfrage(film) == genre
     }
 }
+
+ */
+
