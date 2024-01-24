@@ -25,4 +25,6 @@ fun main() {
     val sortedMovies = getMoviesSortedByTitle()
     println(sortedMovies)
 
+    sellMovie()
+
 }

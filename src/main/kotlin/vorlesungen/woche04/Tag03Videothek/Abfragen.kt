@@ -53,3 +53,50 @@ fun getMoviesSortedByTitle(): MutableList<String> {
     // sort: sortiert das original, hätte keinen return Type da nichts neues rauskommt sondern lediglich das original bearbeitet wird
     return filmListe.sorted().toMutableList()
 }
+
+fun sellMovie(){
+    println("Unsere Filme:")
+    println(filmListe)
+    println("Welchen Film willst du kaufen?")
+    val choice: String = readln()
+    // Film "verkaufen" = aus Filmliste entfernen
+    filmListe.remove(readln())
+    println("Film $choice wurde zum Preis ${getFilmPrice(choice)} verkauft!")
+    println("Neues Sortiment:")
+    println(filmListe)
+}
+
+fun sellMovieIndex(){
+    println("Unsere Filme:")
+    println(filmListe)
+    println("Welchen Film willst du kaufen (gebe den Index ein) ")
+    val choice: Int = readln().toInt()
+    filmListe.remove(filmListe[choice])
+    println("Film ${filmListe[choice]} wurde zum Preis ${getFilmPrice(filmListe[choice])} verkauft!")
+    println("Neues Sortiment:")
+    println(filmListe)
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
