@@ -47,3 +47,9 @@ fun getAverageMoviePrice() : Double {
     // ODER: direkt Funktion nutzen, die den Durchschnitt berechnet: average
     // return filmToPrice.values.average()
 }
+
+fun getMoviesSortedByTitle(): MutableList<String> {
+    // sorted: erstellt sortierte kopie,
+    // sort: sortiert das original, hätte keinen return Type da nichts neues rauskommt sondern lediglich das original bearbeitet wird
+    return filmListe.sorted().toMutableList()
+}
