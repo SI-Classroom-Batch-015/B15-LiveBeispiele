@@ -28,7 +28,9 @@ fun getFilmRatings(filmTitle: String): MutableList<Int> {
 }
 
 fun getCheapestPrice(): Double {
-
     return filmToPrice.values.min()
+}
 
+fun getMostExpensivePrice(): Double {
+    return filmToPrice.values.max()
 }
