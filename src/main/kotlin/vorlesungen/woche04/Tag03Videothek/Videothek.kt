@@ -1,5 +1,5 @@
 // Die FilmListe hat alle unsere Filme
-var filmListe = mutableListOf<String>(
+val filmListe = mutableListOf<String>(
     "The Dark Knight",  
     "Indiana Jones",  
     "Die Hard",  
@@ -9,21 +9,21 @@ var filmListe = mutableListOf<String>(
     "Star Wars",  
     "The Matrix",
     "The Lord of the Rings",
-    "Wayne's World"
+    "Barbie"
 )
 
 // Die Preisliste speichert den Preis zu jedem Filmtitel
 val filmToPrice = mutableMapOf<String, Double>(
-    "The Dark Knight" to randomPrice(),
-    "Indiana Jones" to randomPrice(),
-    "Die Hard" to randomPrice(),
-    "The Shawshank Redemption" to randomPrice(),
-    "Schindler's List" to randomPrice(),
-    "The Godfather" to randomPrice(),
-    "Star Wars" to randomPrice(5.0,9.0),
-    "The Matrix" to randomPrice(),
-    "The Lord of the Rings" to randomPrice(),
-    "Wayne's World" to randomPrice()
+    "The Dark Knight" to 1.0,
+    "Indiana Jones" to 1.0,
+    "Die Hard" to 1.0,
+    "The Shawshank Redemption" to 1.0,
+    "Schindler's List" to 1.0,
+    "The Godfather" to 1.0,
+    "Star Wars" to 1.0,
+    "The Matrix" to 1.0,
+    "The Lord of the Rings" to 1.0,
+    "Barbie" to 1.0
 )
 
 // Diese Map speichert das Genre zu jedem Filmtitel
@@ -37,7 +37,7 @@ val filmToGenre = mutableMapOf(
     "Star Wars" to "Science Fiction/Fantasy",
     "The Matrix" to "Science Fiction/Fantasy",
     "The Lord of the Rings" to "Science Fiction/Fantasy",
-    "Wayne's World" to "Comedy"
+    "Barbie" to "Comedy"
 )
 
 // Diese Map speichert Bewertungen zu jedem Film
@@ -51,6 +51,5 @@ val filmRatings = mutableMapOf<String, MutableList<Int>>(
     "Star Wars" to generateRatings(),
     "The Matrix" to generateRatings(),
     "The Lord of the Rings" to generateRatings(),
-    "Wayne's World" to generateRatings()
+    "Barbie" to generateRatings()
 )
-
