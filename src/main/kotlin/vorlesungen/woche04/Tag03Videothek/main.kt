@@ -1,3 +1,4 @@
+import vorlesungen.woche04.Tag03Videothek.*
 
 fun main() {
 
@@ -13,25 +14,24 @@ fun main() {
     filmRatings["Oppneheimer"] to generateRatings()
 
 
-
-    // Aufgabe 2
-
-
-    // Aufgabe 3
-
-
-    // Aufgabe 4
-
-
-    // Aufgabe 5
-
-
+    println("Willkommen!")
     // Aufgabe 6
+    println("Unser Sortiment (alphabetisch sortiert): ")
+    println(getMoviesSortedByTitle())
+    println(
+        "Wir besitzen ${getNumberOfMovies()} Filme und unserer Preisspanne " +
+                "liegt bei ${getCheapestPrice()} € bis ${getMostExpensivePrice()} €"
+    )
+    println("Durchschnittlich kosten unsere Filme ${getAverageMoviePrice()}€")
+    println("Wählen Sie einen Film für mehr Informationen (geben Sie den Index ein): ")
+    val inputIndex = readln().toInt()
+    val movie = getMoviesSortedByTitle()[inputIndex]
+    println(
+        "Der Film $movie kostet ${getFilmPrice(movie)}€, " +
+                "gehört dem Genre ${getFilmGenre(movie)} an " +
+                "und hat eine durchschnittliche Bewertung von ${getAverageFilmRatings(movie)}"
+    )
 
-
-    // Aufgabe 7
-
-
-    // Aufgabe 8
+    sellMovie()
 
 }

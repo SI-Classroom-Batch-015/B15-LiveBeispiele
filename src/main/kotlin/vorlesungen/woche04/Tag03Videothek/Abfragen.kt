@@ -48,6 +48,10 @@ fun getAverageMoviePrice() : Double {
     // return filmToPrice.values.average()
 }
 
+fun getAverageFilmRatings(filmTitle: String) : Double {
+    return filmRatings[filmTitle]!! .average()
+}
+
 fun getMoviesSortedByTitle(): MutableList<String> {
     // sorted: erstellt sortierte kopie,
     // sort: sortiert das original, hätte keinen return Type da nichts neues rauskommt sondern lediglich das original bearbeitet wird
@@ -56,7 +60,7 @@ fun getMoviesSortedByTitle(): MutableList<String> {
 
 fun sellMovie(){
     println("Unsere Filme:")
-    println(filmListe)
+    println(filmListe.sorted())
     println("Welchen Film willst du kaufen?")
     val choice: String = readln()
     // Film "verkaufen" = aus Filmliste entfernen
