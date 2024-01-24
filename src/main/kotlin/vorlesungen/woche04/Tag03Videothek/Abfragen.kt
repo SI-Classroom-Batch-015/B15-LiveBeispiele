@@ -1,5 +1,6 @@
 package vorlesungen.woche04.Tag03Videothek
 
+import filmListe
 import filmRatings
 import filmToGenre
 import filmToPrice
@@ -33,4 +34,16 @@ fun getCheapestPrice(): Double {
 
 fun getMostExpensivePrice(): Double {
     return filmToPrice.values.max()
+}
+
+fun getNumberOfMovies(): Int {
+    return filmListe.size
+//    return filmToPrice.size
+//    return filmToGenre.size
+}
+
+fun getAverageMoviePrice() : Double {
+    return (filmToPrice.values.sum()) / getNumberOfMovies()
+    // ODER: direkt Funktion nutzen, die den Durchschnitt berechnet: average
+    // return filmToPrice.values.average()
 }
