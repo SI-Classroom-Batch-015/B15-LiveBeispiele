@@ -6,7 +6,7 @@ fun main() {
     // 1.1 in die filmliste
     filmListe.add("Oppenheimer")
     // 1.2 in filmToPrice
-    filmToPrice["Oppenheimer"] to 1.0
+    filmToPrice["Oppenheimer"] to generateRandomPrice()
     // 1.2 in filmToGenre
     filmToGenre["Oppenheimer"] to "Drama"
     // 1.3 in filmRatings
