@@ -26,3 +26,9 @@ fun getFilmGenre(filmTitle: String): String {
 fun getFilmRatings(filmTitle: String): MutableList<Int> {
     return filmRatings[filmTitle]!!
 }
+
+fun getCheapestPrice(): Double {
+
+    return filmToPrice.values.min()
+
+}
