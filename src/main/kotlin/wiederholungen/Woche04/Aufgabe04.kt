@@ -56,7 +56,7 @@ val filmArtikelNr = listOf<Int>(
     0xF67
 )
 
-val filmListe = listOf<String>(
+val movieListe = listOf<String>(
     "The Dark Knight",
     "Indiana Jones",
     "Die Hard",
