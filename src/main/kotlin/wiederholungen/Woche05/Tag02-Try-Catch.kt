@@ -45,7 +45,7 @@ fun main() {
     val zahl3 = 10
     val zahl4 = 0
 
-    //Aufrufen der divide Funktion mit Parameter zahl1 und zahl2
+    //Aufrufen der divide Funktion mit Parameter zahl3 und zahl4
     //println: Fehler beim Teilen: / by zero (aus Zeile 14)
     val ergebnis2 = divide(zahl3, zahl4)
 
