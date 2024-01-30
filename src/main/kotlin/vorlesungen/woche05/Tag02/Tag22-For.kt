@@ -16,10 +16,10 @@ fun main() {
         "Schal" to 9.99
     )
 
-//    // sobald ich for schreibe, entscheide ich, wie meine variablen heissen sollen
-//    for ((name,price) in clothesMap){
-//        println("Artikel: $name, Preis: $price")
-//    }
+    // sobald ich for schreibe, entscheide ich, wie meine variablen heissen sollen
+    for ((name,price) in clothesMap){
+        println("Artikel: $name, Preis: $price")
+    }
 
     // 1. Liste an Sorten, die zufällig 100x in unsere Bestellung eingeordnet werden sollen
     var pizzaSorten = mutableListOf("Hawaii","Tonno","Mozarella")
