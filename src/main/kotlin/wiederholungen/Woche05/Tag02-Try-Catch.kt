@@ -9,12 +9,14 @@ fun divide(a: Int, b: Int): Int {
         var ergebnis = a/b
         // Rückgabewert Ergebnis
         return ergebnis
+
+
         //} catch (auffangen/abfangen) bei Bestehen der exception (Ausnahme)
         //(e: ArithmeticException) --> von Kotlin vorgefertigte exception (Ausnahme)
-
+        //Kotlin hat noch viele weitere exceptions
     } catch (e: ArithmeticException) {
         //println mit Fehlermeldung
-        //e.message ist von Kotlin vorgefertigte Nachricht, die zue: ArithmeticException gehört
+        //e.message ist von Kotlin vorgefertigte Nachricht, die zu: ArithmeticException gehört
         println("Fehler beim Teilen: ${e.message}")
         // Variable Ergebnis wird auf 0 gesetzt
         var ergebnis = 0
