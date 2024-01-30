@@ -21,7 +21,7 @@ fun main() {
         if (fruits[i] == "Mango") { // pruefen, ob in aktuellem Listenelement Mango drin ist
             println("Mango gefunden an Index $i!")
             mangoFound = true
-            // break // bricht die Schleife ab
+            // break // bricht die Schleife ab, kennen wir aber noch nicht. daher hilfsboolean mangoFound
         } else {
             println("Mango noch nicht gefunden, sondern ${fruits[i]}, weitersuchen...")
         }
