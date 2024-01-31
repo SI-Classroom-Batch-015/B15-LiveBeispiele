@@ -2,7 +2,7 @@ package wiederholungen.Woche05
 
 //Diese Funktion isValidPasswort ist bereits vorgegeben.
 //Sie übernimmt als Parameter ein Passwort in Stringformat
-//Dieses Passwort wird auf 3 Anforderungen überprüft (Siehe Z. 9-11 )
+//Dieses Passwort wird auf 3 Anforderungen überprüft (Siehe Z. 10-12 )
 
 //Sind die drei Anforderungen erfüllt, wird true returned
 //Ist mindestens eine Anforderung nicht erfüllt, wird false returned
