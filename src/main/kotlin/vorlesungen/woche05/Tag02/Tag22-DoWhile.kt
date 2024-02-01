@@ -26,9 +26,10 @@ fun main() {
     // Elemente aus der Liste entfernen, bis nur noch das letzte Element, The Dark Knight, übrig ist
     val movies = mutableListOf("Inception", "Tenet", "Dunkirk", "Memento", "The Dark Knight")
 
-    //removeMoviesWhile(movies)
+    removeMoviesWhile(movies)
 
     removeMoviesDoWhile(movies)
+
 
     // Zahl eingeben und prüfen, ob sie gerade ist. wenn nicht: nochmal eingeben
 
