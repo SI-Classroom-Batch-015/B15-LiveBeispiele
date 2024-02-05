@@ -27,9 +27,25 @@ fun main() {
 
 
     // vorkommen des buchstabens 'a' zählen
+val countA = lyrics.count { it == 'a'}
+    println("Anzahl der Buchstaben 'a' ist $countA")
 
+    /*
+    fun countLetterA(text: String): Int {
+        var count = 0
+        for (char in text) {
+            if (char == 'a') {
+                count++
+            }
+        }
+        return count
+    }
 
-    // vorkommen aller buchstaben zählen
+    fun main() {
+        val lyrics: String = "Every night,
+*/
+        // vorkommen aller buchstaben zählen
+
 
     // längstes wort im text finden
 
