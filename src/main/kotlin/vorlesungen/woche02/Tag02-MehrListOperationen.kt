@@ -3,7 +3,7 @@ package vorlesungen.Woche02
 fun main() {
 
      // liste anlegen: ShoppingList
-    val shoppingList: List<String> = listOf("Apfel", "Banane", "Brokkoli", "Kuchen", "Kekse", "Kaffee", "Tee", "Aal")
+    val shoppingList: List<String> = listOf("Apfel", "Banane", "Brokkoli", "Kuchen", "Kekse", "Kaffee", "Tee")
 
 
      // letztes Element: 3 Varianten
