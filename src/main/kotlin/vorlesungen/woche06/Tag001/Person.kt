@@ -1,4 +1,4 @@
-package vorlesungen.woche06.Tag02
+package vorlesungen.woche06.Tag001
 
 
 // Klasse definieren: Blaupause/Bauplan

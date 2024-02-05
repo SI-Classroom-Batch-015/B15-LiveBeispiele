@@ -1,4 +1,4 @@
-package vorlesungen.woche06.Tag02
+package vorlesungen.woche06.Tag001
 
 class Pizza(
     val name: String,

@@ -1,4 +1,4 @@
-package vorlesungen.woche06.Tag02
+package vorlesungen.woche06.Tag001
 
 // Katze mit Default-Attributen
 class Cat(
