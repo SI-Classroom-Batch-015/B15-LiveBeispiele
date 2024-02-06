@@ -9,6 +9,7 @@ class Pizza(var name: String, var groesse: Int, var preis: Double, grundZutaten:
 //        zutaten.addAll(toppings)
 //    }
 
+    // neue Funktion mit nicht-temporären extraZutaten
     fun addExtraToppings(extraZutaten: MutableList<Zutat>){
         extraZutaten.addAll(extraZutaten)
     }
@@ -54,6 +55,8 @@ fun main() {
         ),
         tonnoZutaten
     )
+    // nicht möglich: grundZutaten sind temporär, existieren nur beim Initialisieren
+    //tonno.grundZutaten
 
     // alle Zutaten meiner tonno ausdrucken
     tonnoZutaten.forEach { println(it.name) }

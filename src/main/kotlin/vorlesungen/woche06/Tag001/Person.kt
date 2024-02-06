@@ -27,7 +27,7 @@ class Person(var name: String, var lastName: String, var alter: Int, var cat: Ca
 
 fun main() {
     // Instanziierung: Baugerüst, um eine konkrete Instanz der Klasse erstellen,
-    var katze: Cat = Cat("Betty", 5, "Bengale",Toy("Ball", "rot"),false)
+    var katze: Cat = Cat("Betty", 5, "Bengale",Toy("Ball", "rot"))
     var person1: Person = Person("Simon", "Meyer", 24, katze)
 
     var zahl1: Int = add(9,3)
@@ -55,21 +55,21 @@ fun main() {
 
     // Instanz der Katze erstellen:
     var toy1: Toy = Toy("Katzenangel", "gelb")
-    var cat1: Cat = Cat("Bonnie",2,"Perser", toy1,false)
+    var cat1: Cat = Cat("Bonnie",2,"Perser", toy1)
 
     println(cat1.name)
     println(cat1.alter)
     println(cat1.rasse)
 
-    var cat2: Cat = Cat("Alfie", 3, "BKH", Toy("Katzenminze", "grün"),false) // sterilized ist per default false, wenn ich nichts anderes reinschreibe
+    var cat2: Cat = Cat("Alfie", 3, "BKH", Toy("Katzenminze", "grün")) // sterilized ist per default false, wenn ich nichts anderes reinschreibe
     println(cat2.name)
     println(cat2.alter)
     println(cat2.rasse)
     println("${cat2.name} ist per default nicht sterilisiert:")
-    // println(cat2.sterilized)
+    println(cat2.sterilized)
     println("${cat2.name} wird sterilisiert:")
-    // cat2.sterilize()
-   // println(cat2.sterilized)
+    cat2.sterilize()
+   println(cat2.sterilized)
 
     // Person1 und Person2 heiraten: Wedding Funktion aufrufen
     person2.wedding(person1.lastName)
