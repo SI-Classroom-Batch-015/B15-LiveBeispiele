@@ -10,6 +10,6 @@ class Auto(
     val farbe: String,
     val sitze: Int
 ) {
-    var fahrer: Person? = null
-    val passagiere: MutableList<Person> = mutableListOf()
+    var fahrer: Perrson? = null
+    val passagiere: MutableList<Perrson> = mutableListOf()
 }
