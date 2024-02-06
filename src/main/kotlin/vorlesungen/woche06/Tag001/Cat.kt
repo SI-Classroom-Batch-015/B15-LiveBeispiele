@@ -6,8 +6,13 @@ class Cat(
     var name: String,
     var alter: Int,
     var rasse: String,
+    // default parameter: wie bei funktionen, wird mit false initialisiert und bleibt false, es sei denn, wir schreiben was anderes rein. muss beim erstellen einer instanz also nicht übergeben werden, da bereits false drin steht
+    var sterilized: Boolean = false
 ) {
 
+    fun sterilize(){
+        sterilized = true
+    }
 
     // initialisiert beim ersten erstellen einer instanz, wird jedes mal aufgerufen
     init {
@@ -17,7 +22,7 @@ class Cat(
     // sekundärer Konstruktor
     // braucht keinen extra init block, bekommt einfach einen koerper fuer initialisierungslogik
     // Zusätzliche Gerüste für zusätzliche Eigenschaften
-    constructor(name: String,alter: Int,rasse: String, favoriteToy: Toy, sterilized: Boolean) : this(name,alter,rasse){
+    constructor(name: String,alter: Int,rasse: String, favoriteToy: Toy) : this(name,alter,rasse){
         println("Katze $name mit dem ZWEITEN Konstruktor initialisiert!")
     }
 
@@ -33,7 +38,7 @@ fun main() {
     var cat: Cat = Cat("Betty",12,"Perser")
 
     // 2. Konstruktor nutzen
-    var cat2: Cat = Cat("Mausi",3,"Wildkatze",Toy("Katzenangel", "gelb"),true)
+    var cat2: Cat = Cat("Mausi",3,"Wildkatze",Toy("Katzenangel", "gelb"))
 
     // 3. Konstruktor benutzen
     var cat3: Cat = Cat("Dobbie")
