@@ -16,7 +16,7 @@ fun main () {
 
     var house2 = House("zweiteAdresse", "LA", "21212", "beton")
 
-    val house3 = House(true)
+    //val house3 = House(true)
 
 }
 
