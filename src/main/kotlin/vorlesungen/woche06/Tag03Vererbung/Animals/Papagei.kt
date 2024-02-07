@@ -9,7 +9,8 @@ class Papagei(name: String, var kannSprechen: Boolean): Vogel(name) {
     // override funs sind automatisch überschreibbar
     override fun fortBewegung() {
         super.fortBewegung()
-        println("Papageien sind so schön, wenn sie fliegen...")
+        println("Der Papageie namens ${this.name} ist so schön, wenn er fliegt...")
+
     }
 
     /*

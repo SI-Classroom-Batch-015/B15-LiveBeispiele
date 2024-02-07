@@ -46,4 +46,6 @@ fun main() {
     println(tiger)
     println(adler)
 
+    val animalList: List<Animal> = listOf(tiger,adler,pinguin,ara,Animal("Katze",false,false))
+
 }
