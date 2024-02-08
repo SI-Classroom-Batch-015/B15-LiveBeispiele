@@ -46,6 +46,34 @@ fun main() {
     println(tiger)
     println(adler)
 
-    val animalList: List<Animal> = listOf(tiger,adler,pinguin,ara,Animal("Katze",false,false))
+        // Vogel und Papagei erben von Animal
+    val animalList: MutableList<Animal> = mutableListOf(
+        tiger,
+        adler,
+        pinguin,
+        ara,
+        Animal("Katze",false,false),
+        Vogel("Birdie"),
+        Papagei("Sabine",true)
+        )
+
+    // is Schlüsselwort: gibt true zurueck, wenn it der Klasse Vogel oder ihren Kindern angehört
+    var vogelList = animalList.filter { it is Vogel }
+    println("---- Vogel Liste ----")
+    println(vogelList)
+
+    // as Schlüsseelwort: kann eine KindKlasse zu seiner Mutterklasse machen
+    var animalToBird = tiger as? Vogel
+    println(animalToBird)
+    var birdToAnimal: Animal = pinguin as Animal
+    println(birdToAnimal)
+    animalList.add(birdToAnimal)
+    vogelList = animalList.filter { it is Vogel }
+    println(vogelList)
+    pinguin.vogelFunktion()
+    // as ist bei den Methoden relevant: birdToAnimal hat nicht mehr die Methode vogelFunktion() weil es jetzt ein Animal ist. Taucht aber trotzdem in der Vogelliste auf...
+    //birdToAnimal.vogelFunktion()
+
+
 
 }

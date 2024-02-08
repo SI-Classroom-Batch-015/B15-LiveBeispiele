@@ -18,5 +18,14 @@ open class Vogel(name: String, canFly: Boolean = true): Animal(name,canFly,false
         println("Der Vogel $name fliegt!")
     }
 
+    override fun toString(): String {
+        // super.toString gibt uns die Adresse im Speicher
+        return "Vogel: $name"
+    }
+
+    fun vogelFunktion(){
+
+    }
+
 
 }

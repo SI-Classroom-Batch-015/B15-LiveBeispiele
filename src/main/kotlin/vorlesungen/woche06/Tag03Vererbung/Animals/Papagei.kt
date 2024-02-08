@@ -24,5 +24,9 @@ class Papagei(name: String, var kannSprechen: Boolean): Vogel(name) {
         } else println("$name bleibt stumm.")
     }
 
+    override fun toString(): String {
+        return "Papagei: $name"
+    }
+
 
 }
