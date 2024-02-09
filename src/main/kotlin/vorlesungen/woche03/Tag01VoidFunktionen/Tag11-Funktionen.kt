@@ -12,7 +12,7 @@ fun main() {
 }
 
 // Sinn von Funktionen: Wiederholbarer Code, der nicht immmer wieder geschrieben werden muss!
-fun printName() {
+fun printName(    )      {
     println("Hi, wie ist dein Name?")
     val name: String = readln()
     println("Guten Morgen, $name!")

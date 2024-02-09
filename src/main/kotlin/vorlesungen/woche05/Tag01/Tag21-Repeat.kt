@@ -29,7 +29,7 @@ fun main() {
 
 
     // repeat mit Funktionsaufruf, wo ein Int rauskommt
-    repeat(randomInt()){
+    repeat(randomInt()){ // 20
         println("${it+1}. Durchlauf")
     }
 
@@ -48,6 +48,6 @@ fun main() {
 }
 
 fun randomInt(): Int {
-    val reps: Int = Random.nextInt(1,20)
-    return reps
+    return Random.nextInt(1,20)
+
 }
