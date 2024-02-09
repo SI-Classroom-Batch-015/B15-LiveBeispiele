@@ -6,7 +6,7 @@ fun main() {
     var name: String = "Maike"
     var age: Int = 24
 
-    println("Ich heiße $name und bin $age Jahre alt.")
+    println("Ich heiße ${name.length} und bin $age Jahre alt.")
 
     var koerperGroesse: Double = 1.45
 
@@ -19,11 +19,12 @@ fun main() {
     println("Ich bin $koerperGroesse m groß")
 
     var isSunny: Boolean = false
+    isSunny = true
 
     println("Ist es bei Kalender sonnig? $isSunny")
 
     println("gib jetzt etwas ein")
-    var eingabe: String = readln()
+    var eingabe: Int = readln().toInt()
 
 
     println("Du hast $eingabe eingegeben.")

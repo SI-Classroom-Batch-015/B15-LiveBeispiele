@@ -131,4 +131,7 @@ fun main() {
     // existiert der song Billie Jean bei Michael Jackson?
     var billieExists: Boolean? = music["Michael Jackson"]?.contains("Billie Jean") // true
 
+
+    articles.keys.elementAt(articles.keys.size-1)
+
 }
