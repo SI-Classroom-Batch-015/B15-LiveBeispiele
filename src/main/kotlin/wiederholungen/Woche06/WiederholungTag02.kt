@@ -35,11 +35,11 @@ class House {
         this.address = Address(street, city, zipCode)
     }
 
-    /*
-    constructor(pool: Boolean) {
-        this.address =
+
+    constructor(street: String, city: String, zipCode: String, material: String, pool: Boolean) {
+        this.address = Address(street, city, zipCode)
     }
-    */
+
 
 
     fun displayAddress() {
@@ -58,4 +58,5 @@ class Person(val name: String, val house: House) {
         house.displayAddress()
     }
 }
+
 
