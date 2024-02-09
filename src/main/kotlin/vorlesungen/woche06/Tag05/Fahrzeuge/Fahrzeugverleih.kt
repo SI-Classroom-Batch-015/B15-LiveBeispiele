@@ -151,7 +151,7 @@ class Fahrzeugverleih(name: String) {
 fun main() {
     var verleih: Fahrzeugverleih = Fahrzeugverleih("Meyer's Fahrzeugwelt")
     var alleWasser = verleih.getAlleWasserFahrzeuge()
-   // println(alleWasser)
+    println(verleih.getAlleFahrzeuge())
 
     verleih.addFahrzeug(Wasserfahrzeug("Sea King"))
 
