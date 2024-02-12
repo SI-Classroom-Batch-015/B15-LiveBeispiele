@@ -7,7 +7,7 @@ fun main () {
     val house = House(address)
 
     // inint einer person
-    var person = Person("Max", house)
+    var person = Personnn("Max", house)
 
     println("\n Haus Adresse von ${person.name}")
     person.displayHouseAddress() // CMD + Linksklick -> durchsuchen der codebasis!
@@ -47,7 +47,7 @@ class House {
     }
 }
 
-class Person(val name: String, val house: House) {
+class Personnn(val name: String, val house: House) {
     init { // init -> Initalisierung -> alles was in diesem block steht wird direkt aufgerufen nach dem primären konstruktor
         println("Eine neue Person wird initalisiert: ")
         println("Name: $name")

@@ -6,7 +6,7 @@
  * @property fahrer Der Fahrer des Autos, wird zuerst auf null gesetzt.
  * @property passagiere Eine MutableList von Mitfahrenden im Auto, wird zuerst als leere Liste initialisiert.
  */
-class Auto(
+class Autoo(
     val farbe: String,
     val sitze: Int
 ) {

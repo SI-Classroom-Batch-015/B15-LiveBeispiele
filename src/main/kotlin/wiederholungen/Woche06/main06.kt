@@ -1,11 +1,11 @@
 fun main() {
     // Attribute
-    val person = Person()
+    val person = Personnnn()
     person.name = "Alice"
     person.age = 30
     person.gender = "female"
     person.introduce()
-    val person2 = Person()
+    val person2 = Personnnn()
     println("name eingeben: ")
     person2.name = readln()
     person2.age = 27
@@ -19,11 +19,11 @@ fun main() {
 
 // primär + sekundär
 // Verwendung des primären Konstruktors
-    val auto1 = Auto("Volkswagen", "Golf", "Blau")
+    val auto1 = Autooo("Volkswagen", "Golf", "Blau")
     auto1.info() // Farbe: Blau"
 
 // Verwendung des sekundären Konstruktors
-    val auto2 = Auto("BMW", "3er")
+    val auto2 = Autooo("BMW", "3er")
     auto2.info() // Farbe: unbekannt
 
     // überklasse // Unterklasse

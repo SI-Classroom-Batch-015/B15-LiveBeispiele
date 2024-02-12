@@ -3,8 +3,8 @@ fun main() {
     val perrson2 = Perrson("Anna", alter = 17)
     val perrson3 = Perrson("Erik", alter = 30)
 
-    val auto1 = Auto("grau", sitze = 2)
-    val auto2 = Auto("silber", sitze = 4)
+    val auto1 = Autoo("grau", sitze = 2)
+    val auto2 = Autoo("silber", sitze = 4)
 
     auto1.passagiere.addAll(listOf(perrson1, perrson2, perrson3))
     auto2.fahrer = perrson1

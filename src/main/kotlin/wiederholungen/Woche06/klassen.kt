@@ -1,5 +1,5 @@
 // Attribute -> werden verwendet um den Zustand eines Objektes zu definieren
-class Person {
+class Personnnn {
     var name: String = ""
     var age: Int = 0
     var gender: String = ""
@@ -21,7 +21,7 @@ class Car(
 }
 
 // Primär + Sekundär
-class Auto(
+class Autooo(
     val marke: String,
     val modell: String,
     val farbe: String) {
