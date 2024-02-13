@@ -1,7 +1,7 @@
 package Kartenspiel
 
 val kartendeck : List<String> = listOf(
-    "Pik Ass", "Pik Koenig", "Pik Dame", "Pik Bube", "Pik 10", "Pik 9",
+    "Pik", "Ass", "Pik Koenig", "Pik Dame", "Pik Bube", "Pik 10", "Pik 9",
     "Pik 8" , "Pik 7", "Pik 6", "Pik 5", "Pik 4", "Pik 3", "Pik 2",
     "Kreuz Ass", "Kreuz Koenig", "Kreuz Dame", "Kreuz Bube", "Kreuz 10", "Kreuz 9",
     "Kreuz 8" , "Kreuz 7", "Kreuz 6", "Kreuz 5", "Kreuz 4", "Kreuz 3", "Kreuz 2",
@@ -129,6 +129,7 @@ fun gluecksSpiel(){
 // z.B.: "Kreuz 7" -> 7  | "Herz König" -> 10 | ...
 fun kartenWert(karte: String) :Int {
     var kartenWert = karte.split(" ")[1]
+    // wenn die Karte "Pik Ass" ist: ["Pik","Ass"] --> Index 1 ist Ass
 
     return when(kartenWert){
         "Ass" -> 1
