@@ -13,6 +13,8 @@ class Store {
         Account("Owner","1234",18)
     )
 
+    var currentAccount: Account? = accounts[0]
+
     fun addProduct(){
         println("Du willst also ein Produkt hinzufügen, wie heisst es?")
         var nameInput = readln()
@@ -77,10 +79,28 @@ class Store {
         println("Alle Produkte werden angezeigt...")
     }
 
+    fun showWarenkorb(){
+        println("Hier ist dein Warenkorb:")
+        // currentAccount.printWarenkorb()
+    }
+
 
 }
 
-class Account(name: String, pw: String, alter: Int) {
+open class Account(var name: String, var pw: String, var alter: Int) {
+
+
+}
+
+class CustomerAccount(name: String, pw: String, alter: Int): Account(name,pw,alter){
+    var warenKorb: MutableList<Product> = mutableListOf()
+
+    fun printWarenkorb() {
+        for (product in warenKorb) println(product)
+        // oder
+        warenKorb.forEach { println(it) }
+    }
+
 
 }
 
