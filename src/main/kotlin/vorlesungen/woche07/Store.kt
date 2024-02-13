@@ -66,6 +66,4 @@ fun main() {
     store.addProduct()
     for (product in store.products) println(product)
 
-
-
 }
