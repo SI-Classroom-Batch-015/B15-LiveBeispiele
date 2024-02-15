@@ -21,36 +21,51 @@ class Shop {
     }
 
     fun updateWarenPrice(ware: Ware, newPrice: Double) {
-        val foundWare = warenListe.find { it == ware }
-        foundWare?.preis = newPrice
+        ware.updateWarenPrice(newPrice)
     }
 
 
     fun updateWarenQuantity(ware: Ware, newQuantity: Int) {
-        warenListe.find { it == ware }!!.menge = newQuantity
+        ware.updateWarenQuantity(newQuantity)
     }
 
 
     fun addWareToCart(ware: Ware, quantity: Int) {
-        ware.menge -= quantity // Reduziere die Menge der Ware im Shop
-        aktuellerKunde!!.warenkorb.add(ware)
+        aktuellerKunde!!.addWareToCart(ware,quantity)
     }
 
 
-    fun removeWareFromCart(ware: Ware, quantity: Int) {
-        ware.menge += quantity // Füge die Menge der Ware dem Shop hinzu
-        var wareImKorb = aktuellerKunde!!.warenkorb.find { it.name == ware.name }
-        if (wareImKorb != null && wareImKorb.menge == 1) {
-            aktuellerKunde!!.warenkorb.remove(wareImKorb)
-        } else if (wareImKorb != null && wareImKorb.menge >1){
-            wareImKorb.menge--
-        }
+    fun removeWareFromCart(ware: String, quantity: Int) {
+        aktuellerKunde!!.removeWareFromCart(ware,quantity)
     }
-
 
     fun displayCart() {
-        aktuellerKunde!!.warenkorb.forEach {
-            println("${it.name} - ${it.preis} - ${it.menge}")
+        aktuellerKunde!!.displayCart()
+        println("Was willst du mit deinem Warenkorb machen?")
+        println("[1] Ein Produkt entfernen")
+        var input = readln().toInt()
+        when(input){
+            1 -> {
+                println("Welche Ware willst du entfernen?")
+                var zuEntfernenderWarenName = readln()
+                println("Wie viele davon willst du entfernen?")
+                var zuEntfernendeMenge = readln().toInt()
+                removeWareFromCart(zuEntfernenderWarenName,zuEntfernendeMenge)
+            }
         }
     }
+
+
+    fun customerView(){
+        println("Willkommen ${aktuellerKunde!!.name}!")
+        println("Was willst du tun?")
+        println("[1] Warenkorb anzeigen")
+        var choice = readln().toInt()
+        when (choice){
+            1 -> displayCart()
+        }
+
+    }
+
+
 }
