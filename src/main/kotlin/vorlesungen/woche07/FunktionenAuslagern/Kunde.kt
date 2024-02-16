@@ -1,6 +1,6 @@
 package vorlesungen.woche07.FunktionenAuslagern
 
-class Kunde(var name: String) {
+class Kunde(var name: String, var pw: String) {
 
     var warenkorb: MutableList<Ware> = mutableListOf()
 
@@ -26,6 +26,13 @@ class Kunde(var name: String) {
         warenkorb.forEach {
             println("${it.name} - ${it.preis} - ${it.menge}")
         }
+    }
+
+    override fun toString(): String {
+        return """
+            ---Kunde---
+            Name: $name
+        """.trimIndent()
     }
 
 }
