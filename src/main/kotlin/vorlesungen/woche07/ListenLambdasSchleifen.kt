@@ -43,6 +43,8 @@ fun main() {
 //    println(school.allCourses)
 //    println(school.students)
     school.students[0].enroll(bio)
+
+
 //    println(school.allCourses)
 //    println(school.students)
 
@@ -68,10 +70,5 @@ fun main() {
     println(list.sortByDescending { it.freeSpots }) // kotlin.Unit, denn: sortBy gibt uns keine neue Liste zurueck, sondern sortiert nur das Original.
     println(list)
     println(list.sortedBy { it.freeSpots }) // hier gibt's die Liste raus, denn: sortedBy gibt eine Kopie der Liste zurueck, die sortiert wurde, die dann gedruckt wird
-
-
-
-
-
 
 }

@@ -1,8 +1,11 @@
 package vorlesungen.woche07.FunktionenAuslagern
 
-class Kunde(var name: String, var pw: String) {
+class Kunde(name: String, pw: String): Account(name,pw) {
 
-    var warenkorb: MutableList<Ware> = mutableListOf()
+    var warenkorb: MutableList<Ware> = mutableListOf(
+        Ware("Warenkorb Item 1",9.99,3),
+        Ware("Jacke XXL",9.99,3),
+    )
 
     fun addWareToCart(ware: Ware, quantity: Int) {
         ware.menge -= quantity // Reduziere die Menge der Ware im Shop
@@ -28,11 +31,18 @@ class Kunde(var name: String, var pw: String) {
         }
     }
 
+    // macht die Klasse (das gesamte Objekt) zu einem lesbaren String, in dem vernünftige Infos drin stehen.
+    // wenn wir toString nicht selber schreiben, kommt die Speicheradresse raus
     override fun toString(): String {
-        return """
-            ---Kunde---
-            Name: $name
-        """.trimIndent()
+        return "---Kunde--\nName: $name".trimIndent()
     }
 
+}
+
+fun main() {
+    var kunde1 = Kunde("bla","blabla")
+    var kunde3 = Kunde("blapfjiha","blhuhabla")
+    println(kunde3)
+    println(kunde1.name)
+    println(kunde1)
 }

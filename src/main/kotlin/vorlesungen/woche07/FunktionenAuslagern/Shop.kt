@@ -2,15 +2,24 @@ package vorlesungen.woche07.FunktionenAuslagern
 
 
 class Shop {
-    var warenListe: MutableList<Ware> = mutableListOf()
-
-    var kundenListe: MutableList<Kunde> = mutableListOf(
-        Kunde("john","1234"),
-        Kunde("marc","1234"),
-        Kunde("josie","1234")
+    var warenListe: MutableList<Ware> = mutableListOf(
+        Ware("Hose",9.99,3),
+        Ware("Kaese",9.99,3),
+        Ware("Jacke",9.99,3),
+        Ware("Bla",9.99,3),
+        Ware("Bla",9.99,3),
     )
 
-    var eingeloggterKunde: Kunde? = null
+    var accountListe: MutableList<Account> = mutableListOf(
+        Kunde("john","1234"),
+        Kunde("marc","1234"),
+        Kunde("josie","1234"),
+        Admin("johnAdmin","1234"),
+        Admin("johnAdmin","1234")
+    )
+
+    var eingeloggterUser: Kunde? = null
+    var eingeloggerAdmin: Admin? = null
 
 
 
@@ -51,32 +60,22 @@ class Shop {
     }
 
     fun displayCart() {
-//        aktuellerKunde!!.displayCart()
-//        println("Was willst du mit deinem Warenkorb machen?")
-//        println("[1] Ein Produkt entfernen")
-//        var input = readln().toInt()
-//        when(input){
-//            1 -> {
-//                println("Welche Ware willst du entfernen?")
-//                var zuEntfernenderWarenName = readln()
-//                println("Wie viele davon willst du entfernen?")
-//                var zuEntfernendeMenge = readln().toInt()
-//                removeWareFromCart(zuEntfernenderWarenName,zuEntfernendeMenge)
-//            }
-//        }
-    }
-
-
-    fun customerView(){
-        println("Willkommen!")
-        println("Was willst du tun?")
-        println("[1] Warenkorb anzeigen")
-        var choice = readln().toInt()
-        when (choice){
-            1 -> displayCart()
+        eingeloggterUser!!.displayCart()
+        println("Was willst du mit deinem Warenkorb machen?")
+        println("[1] Ein Produkt entfernen")
+        var input = readln().toInt()
+        when(input){
+            1 -> {
+                println("Welche Ware willst du entfernen?")
+                var zuEntfernenderWarenName = readln()
+                println("Wie viele davon willst du entfernen?")
+                var zuEntfernendeMenge = readln().toInt()
+                removeWareFromCart(zuEntfernenderWarenName,zuEntfernendeMenge)
+            }
         }
-
     }
+
+
 
     fun startShop(){
         println("Willkommen im Store!")
@@ -84,11 +83,31 @@ class Shop {
         println("[1] Login")
         // Login Logik
         // 1. Schritt: input variable
-        var input = readln()
-        // 2. Schritt: je nach Input Aktion auswaehlen
-        when(input){
-            "1" -> login()
+        try {
+            var input = readln().toInt()
+            // 2. Schritt: je nach Input Aktion auswaehlen
+            when (input) {
+                1 -> login()
+                else -> startShop()
+            }
+        } catch(e: Exception){
+            println("FEHLER!!!! $e")
+            startShop()
+
         }
+    }
+
+    fun returnTest(): Int{
+        return try {
+            println("Zahl eingeben...")
+            var x = readln().toInt()
+            println("Zahl ist $x, wird returned...")
+            return 1
+        } catch (e: Exception){
+            println("Die Eingabe war keine Zahl, wir geben einfach 0 zurueck..")
+            return 0
+        }
+
     }
 
     fun login() {
@@ -99,11 +118,23 @@ class Shop {
         println("Passwort eingeben")
         var pw = readln()
         // 2. Schritt: schauen, ob Profil bereits im Store existiert,
-        var kunde: Kunde? = kundenListe.find { it.name == name && it.pw == pw }
+        var account: Account? = accountListe.find { it.name == name && it.pw == pw } // .first wuerede abstuerzen, wenn kein Account gefunden wird
         // 3. wenn ja einloggen,
-        if (kunde != null){
+        if (account != null){
+            // entscheiden, ob Kunde oder Admin eingeloggt wird
+            // Kunde:
+            if (account is Kunde){
+                // Kunden einloggen
+                eingeloggterUser = account
+                showCustView()
+                // Admin
+            } else if (account is Admin){
+                // Admin einloggen
+                eingeloggerAdmin = account
+                // showAdminView()
+            }
             // HIER WIRD DER KUNDE TATSAECHLICH EINGELOGGT:
-            eingeloggterKunde = kunde
+
             println("Erfolgreich eingeloggt mit Account von $name")
             showCustView()
         } // 4. wenn nein Bescheid sagen und nochmal probieren
@@ -111,17 +142,21 @@ class Shop {
             println("Account existiert nicht! Probier's nochmal...")
             login()
         }
-
     }
 
 
 
+
     fun showCustView() {
-        println("Willkommen, ${eingeloggterKunde!!.name} ")
+        println("Willkommen, ${eingeloggterUser!!.name} ")
         println("Was willst du tun?")
         println("1 - Produkte anzeigen")
         println("2 - Warenkorb anzeigen")
-        // weitere Logik ....
+        var input = readln()
+        when(input){
+            "1" -> displayWaresInShop()
+            "2" -> displayCart()
+        }
     }
 
 
@@ -129,9 +164,10 @@ class Shop {
 
 fun main() {
     var store: Shop = Shop()
-    //store.startShop()
     // Test des Login
-    println(store.eingeloggterKunde) // null
+    //println(store.eingeloggterKunde) // null
+    //store.startShop()
     store.login()
-    println(store.eingeloggterKunde) // ---Kunde--- Name: john
+    //println(store.eingeloggterKunde) // ---Kunde--- Name: john
+    //store.returnTest()
 }
