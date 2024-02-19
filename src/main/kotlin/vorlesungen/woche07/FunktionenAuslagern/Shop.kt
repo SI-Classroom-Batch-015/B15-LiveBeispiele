@@ -1,5 +1,7 @@
 package vorlesungen.woche07.FunktionenAuslagern
 
+import kotlin.math.log
+
 
 class Shop {
     var warenListe: MutableList<Ware> = mutableListOf(
@@ -80,7 +82,8 @@ class Shop {
     fun startShop(){
         println("Willkommen im Store!")
         println("Was willst du tun?")
-        println("[1] Login")
+        println("[1] Kunden Login")
+        println("[2] Admin Login")
         // Login Logik
         // 1. Schritt: input variable
         try {
@@ -88,6 +91,7 @@ class Shop {
             // 2. Schritt: je nach Input Aktion auswaehlen
             when (input) {
                 1 -> login()
+                2 -> login()
                 else -> startShop()
             }
         } catch(e: Exception){
