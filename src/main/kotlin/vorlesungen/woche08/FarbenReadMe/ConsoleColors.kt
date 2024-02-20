@@ -12,7 +12,6 @@ fun main() {
     val underline = "\u001B[4m"
     val backgroundYellow = "\u001B[43m"
 
-
     println("${red}Roter Text")
     println("Ist dieser Text wieder weiß?")
     println("${reset}Dieser Text ist nicht mehr rot...")

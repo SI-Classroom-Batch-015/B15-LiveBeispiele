@@ -1,6 +1,9 @@
 package vorlesungen.woche07
 
+import vorlesungen.woche08.playSound
+
 class Store {
+    var path = "src/main/kotlin/vorlesungen/woche08/cash.wav"
     var products: MutableList<Product> = mutableListOf(
        Kleidung("Hose",29.99),
        Product("Tasche",34.99),
@@ -25,7 +28,11 @@ class Store {
         println("[2] Kleidung")
         var kategorieInput = readln().toInt()
         when(kategorieInput){
-            1 -> products.add(Product(nameInput,priceInput))
+            1 -> {
+                products.add(Product(nameInput, priceInput))
+                playSound(path)
+                showCustomerView()
+            }
             2 -> products.add(Kleidung(nameInput,priceInput))
         }
         println("Wir fügen $nameInput mit dem Preis $priceInput hinzu...")
@@ -117,13 +124,13 @@ open class Product(var name: String, var price: Double){
 
 fun main() {
     var store: Store = Store()
-    store.showCustomerView()
+    //store.showCustomerView()
 
 //    for (product in store.products) println(product)
 //    println("----")
 //
 //    // neues Produkt hinzufuegen (exakt das gleiche Prinzip, wie einen neuen Account hinzufuegen)
-//    store.addProduct()
+      store.addProduct()
 //    for (product in store.products) println(product)
 
 }
