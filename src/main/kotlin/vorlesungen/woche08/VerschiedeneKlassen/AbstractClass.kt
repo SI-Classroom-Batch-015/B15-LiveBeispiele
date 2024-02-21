@@ -23,3 +23,9 @@ package vorlesungen.woche08.VerschiedeneKlassen
 
     }
 
+fun main() {
+    // var chara: Character = // ABSTRAKT: GEHT NICHT Character("Bruno", 100.0,4)
+    var hero: Hero = Hero("Bruno", 100.0,4)
+    var enemy: Enemy = Enemy("Bruno", 100.0,4)
+}
+
